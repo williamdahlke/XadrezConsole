@@ -22,7 +22,7 @@ namespace tabuleiro
             QteMovimentos = 0;
         }
 
-        public void incrementarQuantidadeMovimentos() 
+        public void IncrementarQuantidadeMovimentos() 
         {
             QteMovimentos++;
         }
@@ -32,12 +32,12 @@ namespace tabuleiro
             QteMovimentos--;
         }
 
-        public bool existeMovimentosPossiveis()
+        public bool ExisteMovimentosPossiveis()
         {
-            bool[,] mat = movimentosPossiveis();
-            for (int i=0; i<Tab.linhas; i++)
+            bool[,] mat = MovimentosPossiveis();
+            for (int i=0; i<Tab.Linhas; i++)
             {
-                for (int j=0; j<Tab.colunas; j++)
+                for (int j=0; j<Tab.Colunas; j++)
                 {
                     if (mat[i, j])
                     {
@@ -48,11 +48,11 @@ namespace tabuleiro
             return false;
         }
 
-        public bool podeMoverPara(Posicao pos)
+        public bool MovimentoPossivel(Posicao pos)
         {
-            return movimentosPossiveis()[pos.linha, pos.coluna];
+            return MovimentosPossiveis()[pos.Linha, pos.Coluna];
         }
 
-        public abstract bool[,] movimentosPossiveis();
+        public abstract bool[,] MovimentosPossiveis();
     }
 }
